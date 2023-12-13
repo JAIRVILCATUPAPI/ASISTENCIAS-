@@ -1,0 +1,61 @@
+
+package Modelo;
+
+public class dgrado{
+ 
+private int idgrado;
+private  String nombre;
+private  String nivel;
+
+
+private String descripcion;
+
+
+
+
+public dgrado (){
+
+}
+
+    public dgrado(int idgrado, String nombre, String nivel, String descripcion) {
+        this.idgrado = idgrado;
+        this.nombre = nombre;
+        this.nivel = nivel;
+        this.descripcion = descripcion;
+    }
+
+    public int getIdgrado() {
+        return idgrado;
+    }
+
+    public void setIdgrado(int idgrado) {
+        this.idgrado = idgrado;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+
+}
+
