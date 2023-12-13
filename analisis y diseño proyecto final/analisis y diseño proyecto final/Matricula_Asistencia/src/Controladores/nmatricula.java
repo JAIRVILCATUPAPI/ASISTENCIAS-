@@ -24,4 +24,30 @@ public DefaultTableModel mostrar (String buscar){
     grado.idgrado WHERE estudiante.apellidos LIKE ?";
 
   try {
-    PreparedStatement 
+    PreparedStatement pst = cn.prepareStatement(sql);
+    pst.setString (1, "%" + buscar + "%");
+
+  ResultSet rs = pst.executeQuery();
+
+    while (rs.next()){
+      registros[0] = rs.getString("idmatricula");
+      registros[1] = rs.getString("idEstudiante");
+      registros[2] = rs.getString("identificacion");
+      registros[3] = rs.getString("Nombres");
+      registros[4] = rs.getString("Apellidos");
+      registros[5] = rs.getString("nombre");
+      registros[6] = rs.getString("nivel");
+      registros[7] = rs.getString("periodo");
+      registros[8] = rs.getString("estado");
+      registros[9] = rs.getString("idgrado");
+
+      modelo.addRow(registros);
+    }
+    return modelo;
+  } catch (Exception e) {
+    JOptionPane.showMessageDialog(null, e);
+    return null;
+  }
+}
+  
+  
